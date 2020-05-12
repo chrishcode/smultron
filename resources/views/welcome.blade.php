@@ -15,18 +15,26 @@
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&display=swap" rel="stylesheet">
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
         <style>
-                    /**
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .alert-success {
+                background-color: red;
+            }
+            /**
             * The CSS shown here will not be introduced in the Quickstart guide, but shows
             * how you can use CSS to style your Element's container.
             */
             .StripeElement {
+            font-family: 'Poppins', sans-serif;
+
             box-sizing: border-box;
 
             height: 40px;
@@ -35,7 +43,7 @@
 
             border: 1px solid transparent;
             border-radius: 4px;
-            background-color: #EDF2F7;
+            background-color: #F7FAFC;
 
             .StripeElement--focus {
             box-shadow: 0 1px 3px 0 #cfd7df;
@@ -50,31 +58,37 @@
             }
         </style>
     </head>
-    <body>
-        Laraflo
-        @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
+    <body class="bg-white text-gray-500">
+        <div class="flex justify-center w-screen h-screen">
+            <div class="w-3/12 flex flex-col justify-center">
+                <img src="{{ asset('laraflologo.png') }}" alt="Laraflo">
+                <p class="text-center mt-4 mb-4">Rapidly build beautiful donation sites for your Laravel open source projects!</p>
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+
+                <form action="donate" method="post" id="payment-form" class="flex flex-col">
+                    @csrf
+                    <div class="form-row">
+                        <!-- <label for="card-element">
+                        Credit or debit card
+                        </label> -->
+                        <input type="text" name="donationAmount" class="outline-none mb-1 w-full bg-gray-100 px-3 py-2 rounded text-gray-500" placeholder="$">
+                        <div class="w-full" id="card-element">
+                        <!-- A Stripe Element will be inserted here. -->
+                        </div>
+
+                        <!-- Used to display form errors. -->
+                        <div id="card-errors" role="alert"></div>
+                    </div>
+
+                    <button type="submit" class="outline-none mt-4 bg-gray-100 px-1 py-2 rounded text-gray-500">Donate!</button>
+                </form>
+                <p class="text-center mt-4 text-xs">Made with <span class="text-lg" style="font-family: 'Sacramento', cursive;">Laraflo</span></p>
             </div>
-        @endif
-
-        <form action="donate" method="post" id="payment-form">
-            @csrf
-            <div class="form-row">
-                <!-- <label for="card-element">
-                Credit or debit card
-                </label> -->
-                <input type="text" name="donationAmount" class="outline-none mb-1 w-full bg-gray-200 px-3 py-2 rounded text-gray-500" placeholder="$100">
-                <div class="w-full" id="card-element">
-                <!-- A Stripe Element will be inserted here. -->
-                </div>
-
-                <!-- Used to display form errors. -->
-                <div id="card-errors" role="alert"></div>
-            </div>
-
-            <button type="submit" class="outline-none mt-4 bg-gray-200 px-3 py-2 rounded-full text-gray-500">Submit Payment</button>
-        </form>
+        </div>
         <script>
             window.addEventListener('load',function(){
                     // Create a Stripe client.
