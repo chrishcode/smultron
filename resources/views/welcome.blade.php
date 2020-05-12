@@ -86,7 +86,8 @@
 
                     <button type="submit" class="outline-none mt-4 bg-gray-100 px-1 py-2 rounded text-gray-500">Donate!</button>
                 </form>
-                <p class="text-center mt-4 text-xs">Made with <span class="text-lg" style="font-family: 'Sacramento', cursive;">Laraflo</span></p>
+                <!-- <p class="text-center mt-4 text-xs">Made with <span class="text-lg" style="font-family: 'Sacramento', cursive;">Laraflo</span></p> -->
+                <p class="text-center mt-4 text-xs">You are in trial mode, launching your site? But a licence!</p>
             </div>
         </div>
         <script>
