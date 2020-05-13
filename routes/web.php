@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home');
+// Route::get('/admin', 'HomeController@index')->name('home');
 
 // Route::get('/donate', function () {
 //     return view('donate');
@@ -31,16 +31,16 @@ Route::post('/donate', function (Request $request) {
     $charge = Stripe::charges()->create([
         'source' => $request->stripeToken,
         'currency' => 'USD',
-        'amount'   => $request->donationAmount,
+        'amount'   => '99',
     ]);
 
-    DB::table('donations')->insert(
-        [
-            'amount' => $request->donationAmount,
-            "created_at" =>  \Carbon\Carbon::now(),
-            "updated_at" => \Carbon\Carbon::now()
-        ]
-    );
+    // DB::table('donations')->insert(
+    //     [
+    //         'amount' => $request->donationAmount,
+    //         "created_at" =>  \Carbon\Carbon::now(),
+    //         "updated_at" => \Carbon\Carbon::now()
+    //     ]
+    // );
 
     return back()->with('message', 'Thank you! Your payment was successful.');
 });
