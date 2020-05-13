@@ -1,23 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+    <div class="flex justify-center">
+        <div class="w-3/12 text-center">
+            <h1 class="text-2xl mb-4">Donations</h1>
+            <p class="bg-gray-100 mb-2 text-center rounded py-4 text-gray-500"><span class="text-green-400 text-4xl">{{ count($donations) }}</span> <br> Total</p>
+            <p class="bg-gray-100 mb-2 text-center rounded py-4 text-gray-500"><span class="text-green-400 text-4xl">${{ $revenue }}</span> <br> Revenue</p>
+            <p class="mt-5 mb-3">Feed</p>
+            @foreach ($donations as $donation)
+                <p class="bg-gray-100 mb-2 text-center rounded py-4 text-gray-500"><span class="text-green-400 text-4xl">${{ $donation->amount }}</span> <br> {{ \Carbon\Carbon::parse($donation->created_at)->diffForHumans() }}</p>
+            @endforeach
         </div>
     </div>
-</div>
 @endsection

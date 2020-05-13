@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $donations = DB::table('donations')->select('amount', 'created_at')->get();
+        $donations = $donations->reverse();
+        
+        $revenue = 0;
+        foreach ($donations as $donation) {
+            $revenue = $revenue + $donation->amount; 
+        }
+
+        return view('home')->with('donations', $donations)->with('revenue', $revenue);
+        // return view('home', $donations);
     }
 }
