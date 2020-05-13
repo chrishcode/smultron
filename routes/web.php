@@ -21,11 +21,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');
 
-Route::get('/donate', function () {
-    return view('donate');
-});
+// Route::get('/donate', function () {
+//     return view('donate');
+// });
 
 Route::post('/donate', function (Request $request) {
     $charge = Stripe::charges()->create([
@@ -33,6 +33,14 @@ Route::post('/donate', function (Request $request) {
         'currency' => 'USD',
         'amount'   => $request->donationAmount,
     ]);
+
+    DB::table('donations')->insert(
+        [
+            'amount' => $request->donationAmount,
+            "created_at" =>  \Carbon\Carbon::now(),
+            "updated_at" => \Carbon\Carbon::now()
+        ]
+    );
 
     return back()->with('message', 'Thank you! Your payment was successful.');
 });
