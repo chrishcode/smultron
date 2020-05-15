@@ -1,7 +1,6 @@
-# Smultron
-Smultron is a Laravel boilerplate app that makes it possible to charge money from your users. Your users will pay a one time fee to access you application. The only thing you have to do to get started is to clone this repository, enter your Stripe API keys and away you go.
-
 ![Smultron image](https://file.coffee/u/8irX4k8Qijd.png)
+
+Smultron is a Laravel boilerplate app that makes it possible to charge money from your users. Your users will pay a one time fee to access you application. The only thing you have to do to get started is to clone this repository, enter your Stripe API keys and away you go.
 
 # Installation
 Clone this repository

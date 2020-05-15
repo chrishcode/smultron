@@ -4,14 +4,7 @@
     <div class="flex justify-center items-center">
         <div class="w-6/12 text-center">
             @if(Auth::user()->payed == true)
-                <p>Welcome to Smultron! Let's get started!</p>
-                <p class="mt-4">Clone this github repo</p>
-                <code>git clone https://github.com/chrishcode/smultron.git myprojectname</code>
-                <p class="mt-4">Paste your stripe keys into the .env file</p>
-                <code>STRIPE_KEY=mystripekey <br>STRIPE_SECRET=mystripesecretkey</code>
-                <p class="mt-4">Install dependencies, generate an app key, migrate database, and start the server</p>
-                <code>composer update --no-scripts <br> php artisan key:generate <br> php artisan migrate <br> php artisan serve</code>
-                <p class="mt-4">That's it! Now you have a payed Laravel app up and running!</p>
+                <p>Welcome to Smultron! Build your app here!</p>
             @elseif(Auth::user()->payed == false)
                 <p class="text-red-400 text-4xl">$99</p>
                 <p>This is your Smultron app, this is where your users pay a one time fee to access your application. Once your users has payed they will be able to access your application.</p>
