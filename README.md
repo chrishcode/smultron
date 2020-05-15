@@ -1,8 +1,7 @@
 # Smultron
 Smultron is a Laravel boilerplate app that makes it possible to charge money from your users. Your users will pay a one time fee to access you application. The only thing you have to do to get started is to clone this repository, enter your Stripe API keys and away you go.
 
-![Smultron image](https://file.coffee/u/my4sZw3nfgl.png "")
-
+![Smultron image](https://file.coffee/u/8irX4k8Qijd.png)
 
 # Installation
 Clone this repository
@@ -46,3 +45,5 @@ Start your app on a local server
 `php artisan serve`
 
 That’s it! Now you have a new Laravel app that let’s you charge money from your users in order to access it.
+
+![Smultron image](https://file.coffee/u/my4sZw3nfgl.png "")
