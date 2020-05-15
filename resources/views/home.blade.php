@@ -9,8 +9,8 @@
                 <code>git clone https://github.com/chrishcode/smultron.git myprojectname</code>
                 <p class="mt-4">Paste your stripe keys into the .env file</p>
                 <code>STRIPE_KEY=mystripekey <br>STRIPE_SECRET=mystripesecretkey</code>
-                <p class="mt-4">Install dependencies, generate an app key, and start the server</p>
-                <code>composer update --no-scripts <br> php artisan key:generate <br> php artisan serve</code>
+                <p class="mt-4">Install dependencies, generate an app key, migrate database, and start the server</p>
+                <code>composer update --no-scripts <br> php artisan key:generate <br> php artisan migrate <br> php artisan serve</code>
                 <p class="mt-4">That's it! Now you have a payed Laravel app up and running!</p>
             @elseif(Auth::user()->payed == false)
                 <p class="text-red-400 text-4xl">$99</p>
