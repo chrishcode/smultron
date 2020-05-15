@@ -16,12 +16,16 @@ use Cartalyst\Stripe\Laravel\Facades\Stripe;
 */
 
 Route::get('/', function () {
+    return redirect('/home');
+});
+
+Route::get('/pay', function () {
     return view('welcome');
 });
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/donate', function () {
 //     return view('donate');
@@ -33,6 +37,12 @@ Route::post('/donate', function (Request $request) {
         'currency' => 'USD',
         'amount'   => '99',
     ]);
+
+    $user = Auth::user();
+    $user = App\User::find($user->id);
+    $user->payed = true;
+    $user->save();
+
 
     // DB::table('donations')->insert(
     //     [

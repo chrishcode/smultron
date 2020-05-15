@@ -28,6 +28,7 @@
 
         .navbar-brand {
             font-family: 'Sacramento', cursive;
+            color: #F7FAFC;
         }
                 /**
         * The CSS shown here will not be introduced in the Quickstart guide, but shows
@@ -42,7 +43,7 @@
 
         border: 1px solid transparent;
         border-radius: 4px;
-        background-color: #EDF2F7;
+        background-color: #F7FAFC;
 
         .StripeElement--focus {
         box-shadow: 0 1px 3px 0 #cfd7df;
@@ -61,7 +62,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-none">
             <div class="container">
-                <a class="navbar-brand text-2xl" href="{{ url('/') }}">
+                <a class="navbar-brand text-2xl0" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -110,9 +111,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        @yield('content')
     </div>
     <script>
     window.addEventListener('load',function(){
