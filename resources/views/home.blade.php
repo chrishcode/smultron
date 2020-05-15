@@ -14,8 +14,8 @@
                 <p class="mt-4">That's it! Now you have a payed Laravel app up and running!</p>
             @elseif(Auth::user()->payed == false)
                 <p class="text-red-400 text-4xl">$99</p>
-                <p>Rapidly build payed Laravel apps! Pay $99 and get access today!</p>
-                <p class="mt-4">Use stripes demo card during beta period.</p>
+                <p>This is your Smultron app, this is where your users pay a one time fee to access your application. Once your users has payed they will be able to access your application.</p>
+                <p class="mt-4">Use stripes demo card to try it!</p>
                 <p>4242 4242 4242 4242 02/22 222</p>
                 <form action="donate" method="post" id="payment-form" class="flex flex-col mt-4">
                     @csrf
