@@ -38,6 +38,18 @@
         .navbar-light .navbar-nav .nav-link:hover {
             color: #A0AEC0;
         }
+        
+        .dropdown-item {
+            padding: 0px;
+            text-align: center;
+            color: #A0AEC0;
+        }
+
+        .dropdown-item:hover {
+            padding: 0px;
+            text-align: center;
+            color: #A0AEC0;
+        }
                 /**
         * The CSS shown here will not be introduced in the Quickstart guide, but shows
         * how you can use CSS to style your Element's container.

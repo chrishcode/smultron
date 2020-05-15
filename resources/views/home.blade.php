@@ -2,12 +2,21 @@
 
 @section('content')
     <div class="flex justify-center items-center">
-        <div class="w-3/12 text-center">
+        <div class="w-6/12 text-center">
             @if(Auth::user()->payed == true)
-                <p>Welcome to Smultron!</p>
+                <p>Welcome to Smultron! Let's get started!</p>
+                <p class="mt-4">Clone this github repo</p>
+                <code>git clone https://github.com/chrishcode/smultron.git myprojectname</code>
+                <p class="mt-4">Paste your stripe keys into the .env file</p>
+                <code>STRIPE_KEY=mystripekey <br>STRIPE_SECRET=mystripesecretkey</code>
+                <p class="mt-4">Install dependencies, generate an app key, and start the server</p>
+                <code>composer update --no-scripts <br> php artisan key:generate <br> php artisan serve</code>
+                <p class="mt-4">That's it! Now you have a payed Laravel app up and running!</p>
             @elseif(Auth::user()->payed == false)
                 <p class="text-red-400 text-4xl">$99</p>
                 <p>Rapidly build payed Laravel apps! Pay $99 and get access today!</p>
+                <p class="mt-4">Use stripes demo card during beta period.</p>
+                <p>4242 4242 4242 4242 02/22 222</p>
                 <form action="donate" method="post" id="payment-form" class="flex flex-col mt-4">
                     @csrf
                     <div class="form-row">

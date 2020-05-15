@@ -65,7 +65,7 @@
             <div class="w-3/12 flex flex-col justify-center">
                 <img src="{{ asset('smultronlogo.png') }}" alt="Laraflo">
                 <p class="text-center">Rapidly build payed Laravel apps!</p>
-                <a href="/home" class="outline-none mt-10 bg-gray-100 px-1 py-2 rounded text-gray-500 text-center hover:no-underline hover:text-gray-500">Get started! $99 per site</a>
+                <a href="/home" class="outline-none mt-10 bg-gray-100 px-1 py-2 rounded text-gray-500 text-center hover:no-underline hover:text-gray-500">Get started!</a>
             </div>
         </div>
         <script>
