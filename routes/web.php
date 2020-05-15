@@ -19,6 +19,10 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome2');
+});
+
 Route::get('/pay', function () {
     return view('welcome');
 });

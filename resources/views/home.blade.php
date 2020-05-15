@@ -4,9 +4,10 @@
     <div class="flex justify-center items-center">
         <div class="w-3/12 text-center">
             @if(Auth::user()->payed == true)
-                <p>You have payed for this app, welcome!</p>
+                <p>Welcome to Smultron!</p>
             @elseif(Auth::user()->payed == false)
-                <p>You need to pay $99 to access this app!</p>
+                <p class="text-red-400 text-4xl">$99</p>
+                <p>Rapidly build payed Laravel apps! Pay $99 and get access today!</p>
                 <form action="donate" method="post" id="payment-form" class="flex flex-col mt-4">
                     @csrf
                     <div class="form-row">

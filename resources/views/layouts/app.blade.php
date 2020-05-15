@@ -30,6 +30,14 @@
             font-family: 'Sacramento', cursive;
             color: #F7FAFC;
         }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #A0AEC0;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: #A0AEC0;
+        }
                 /**
         * The CSS shown here will not be introduced in the Quickstart guide, but shows
         * how you can use CSS to style your Element's container.
@@ -62,8 +70,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-none">
             <div class="container">
-                <a class="navbar-brand text-2xl0" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand text-2xl0" href="{{ url('/welcome') }}">
+                    <img src="{{ asset('smultronlogo.png') }}" alt="Laraflo" class="w-24">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
